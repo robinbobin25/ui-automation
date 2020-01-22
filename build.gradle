@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+version = '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'com.codeborne:selenide:5.6.1'
+    testImplementation 'junit:junit:4.13'
+    testImplementation 'org.testcontainers:selenium:1.12.3'
+}
+
+test {
+    systemProperties = [
+            'file.encoding': 'UTF-8',
+            'selenide.browser': 'chrome'
+    ]
+}
